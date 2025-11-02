@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exam (Student)</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script defer src="srtudent.js"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8fafc;
+    }
+    #studentExamContainer > div {
+      background-color: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+    }
+    .option-label:hover {
+      border-color: #4f46e5;
+      background-color: #eef2ff;
+    }
+    label:has(input[type="radio"]:checked) {
+      border-color: #4f46e5;
+      background-color: #eef2ff;
+      font-weight: 500;
+      color: #3730a3;
+    }
+    .btn {
+      transition: all 0.2s ease-in-out;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.15);
+    }
+    .btn:disabled {
+      background-color: #9ca3af;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+  </style>
+</head>
+<body class="p-6">
+  <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8">
+    
+    <div class="text-center mb-8 relative">
+        <h1 id="examTitle" class="text-3xl font-bold text-gray-800">Loading Exam...</h1>
+        <div id="timerDisplay" class="absolute top-0 right-0 bg-red-100 text-red-700 text-lg font-bold px-4 py-2 rounded-lg shadow-sm"></div>
+    </div>
+    <div id="studentExamContainer"></div>
+    
+    <button id="submitExamBtn" class="hidden w-full mt-4 bg-indigo-600 text-white rounded-lg p-3 font-semibold shadow-md hover:bg-indigo-700 btn">
+      Submit Exam
+    </button>
+    
+    <div id="resultBox" class="hidden mt-8 p-8 text-center bg-gradient-to-br from-green-400 to-blue-500 rounded-lg shadow-xl">
+    </div>
+  </div>
+</body>
+</html>
